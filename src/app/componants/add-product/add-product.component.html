@@ -1,0 +1,72 @@
+<div class="add-product-wrapper" *ngIf="isAdmin()&&proRes===undefined">
+  <form class="add-product-form" (ngSubmit)="onSubmit()" #productForm="ngForm">
+    <h2>Add New Product</h2>
+
+    <input
+      type="text"
+      name="name"
+      [(ngModel)]="product.name"
+      required
+      placeholder="Product Name"
+      class="input-field"
+    />
+
+    <input
+      type="number"
+      name="price"
+      [(ngModel)]="product.price"
+      required
+      placeholder="Price"
+      class="input-field"
+    />
+
+    <textarea
+      name="description"
+      [(ngModel)]="product.description"
+      required
+      placeholder="Description"
+      class="input-field"
+      rows="3"
+    ></textarea>
+
+    <select
+      name="category"
+      [(ngModel)]="catName"
+      required
+      class="input-field"
+    >
+      <option value="" disabled selected >Select Category</option>
+      <option *ngFor="let cat of categories" [value]="cat.name">{{ cat.name }}</option>
+    </select>
+
+    <input
+      type="text"
+      name="logoPath"
+      [(ngModel)]="product.logoPath"
+      placeholder="Logo Path (optional)"
+      class="input-field"
+    />
+
+    <button type="submit" class="submit-btn" [disabled]="productForm.invalid">
+      Add Product
+    </button>
+  </form>
+</div>
+<div>
+  <p *ngIf="!isAdmin()" class="no-order">This is only for admins</p>
+</div>
+<div class="col-lg-6" *ngIf="proRes!==undefined">
+  <div class="d-flex align-items-center">
+    <img class="flex-shrink-0 img-fluid rounded" src="../../../assets/img/{{proRes.logoPath}}.jpg" alt="" style="width: 80px;">
+    <div class="w-100 d-flex flex-column text-start ps-4">
+      <h5 class="d-flex justify-content-between border-bottom pb-2">
+        <span>{{proRes.name}}</span>
+        <span class="text-primary">${{proRes.price}}</span>
+      </h5>
+      <small class="fst-italic">{{proRes.description}}</small>
+      <button type="button" class="btn btn-danger col-lg-6" (click)="returnToMain()">Return To Main Page</button>
+    </div>
+  </div>
+</div>
+<p class="notification error notificationAr" *ngIf="messageAr != ''">{{messageAr}}</p>
+<p class="notification error notificationEn" *ngIf="messageEn != ''">{{messageEn}}</p>
