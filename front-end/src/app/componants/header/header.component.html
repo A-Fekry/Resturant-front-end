@@ -1,0 +1,49 @@
+<!-- Navbar & Hero Start -->
+<div class="container-xxl position-relative p-0">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+    <a routerLink="/products" class="navbar-brand p-0">
+      <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Restoran</h1>
+      <!-- <img src="img/logo.png" alt="Logo"> -->
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <input  *ngIf="isUserLogin()" class="form-control" type="search" placeholder="Search" aria-label="Search" #key (input)="search(key.value)">
+      <button  *ngIf="isUserLogin()" class="btn btn-outline-success" type="submit" (click)="search(key.value)">Search</button>
+      <div   *ngIf="isUserLogin()" class="navbar-nav ms-auto py-0 pe-4">
+        <div class="nav-item nav-link active"><a routerLink="/contact-info">Contact</a></div>
+        <div class="nav-item nav-link active"> </div>
+        <div class="nav-item nav-link active"><a routerLink="/chefs">Team</a></div>
+        <div class="nav-item nav-link active"> </div>
+
+
+        <div class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Actions</a>
+          <div class="dropdown-menu m-0">
+
+            <a *ngIf="isAdmin()"  class="dropdown-item" (click)="addProduct()">Add Products</a>
+            <a href="team.html" class="dropdown-item">Request Orders</a>
+            <a href="team.html" class="dropdown-item">All Request Orders</a>
+            <a [routerLink]="cat.name === 'ALL'? '/products' : '/category/' + cat.id" *ngFor="let cat of categories" href="booking.html"  class="dropdown-item">{{cat.name}}</a>
+          </div>
+        </div>
+
+
+
+        <!--<a href="contact.html" class="nav-item nav-link">Contact</a>-->
+      </div>
+
+
+    </div>
+    <app-card *ngIf="isUserLogin()"></app-card>
+
+    <div *ngIf="isUserLogin()" class="nav-item nav-link active"><a (click)="logOut()">LogOut</a></div>
+    <div *ngIf="!isUserLogin()" class="nav-item nav-link active"><a (click)="login()">login</a></div>
+    <div *ngIf="!isUserLogin()" class="nav-item nav-link active"><a (click)="signup()">signup</a></div>
+  </nav>
+
+  <div class="container-xxl py-5 bg-dark hero-header mb-5">
+  </div>
+</div>
+<!-- Navbar & Hero End -->

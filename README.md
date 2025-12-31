@@ -1,27 +1,51 @@
-# FrontEnd
+🍽️ Restaurant Frontend
+A modern restaurant web application built with Angular 11, featuring a responsive design and intuitive user interface for browsing menus, making reservations, and ordering food online.
+✨ Features
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
+Menu Browsing: View restaurant menu items with detailed descriptions and pricing
+Responsive Design: Seamless experience across desktop, tablet, and mobile devices
+Modern UI: Clean and attractive interface using SCSS for styling
+Fast Performance: Optimized Angular application for quick loading times
 
-## Development server
+🚀 Getting Started
+Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Node.js (v12 or higher)
+npm or yarn
+Angular CLI 11.2.3
 
-## Code scaffolding
+Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Clone the repository
 
-## Build
+bashgit clone https://github.com/A-Fekry/Resturant-front-end.git
+cd Resturant-front-end
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Install dependencies
 
-## Running unit tests
+bashnpm install
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run the development server
 
-## Running end-to-end tests
+bashng serve
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Open your browser and navigate to http://localhost:4200/
 
-## Further help
+🛠️ Built With
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Angular 11 - Frontend framework
+TypeScript - Programming language
+SCSS - Styling
+Angular CLI - Development tools
+
+📦 Available Scripts
+
+ng serve - Start development server
+ng build - Build the project
+ng test - Run unit tests
+ng e2e - Run end-to-end tests
+
+📝 License
+This project is open source and available for educational purposes.
+👨‍💻 Author
+A-Fekry
