@@ -20,12 +20,18 @@ export class ProductsComponent implements OnInit{
   products: Product[] = [];
   messageAr = '';
   messageEn = '';
+  // tslint:disable-next-line:max-line-length
   constructor(private productService: ProductService, private activatedRoute: ActivatedRoute, private orderService: OrderService, private auth: AuthService) { }
 
   ngOnInit(): void {
     this.finalProducts(this.pageNumber);
   }
 
+  // tslint:disable-next-line:typedef
+  onPageSizeChange() {
+    this.pageNumber = 1; // مهم جداً نرجع لأول صفحة
+    this.finalProducts(this.pageNumber);
+  }
 
   finalProducts(pageNo): void {
     this.activatedRoute.paramMap.subscribe(params => {
@@ -33,12 +39,12 @@ export class ProductsComponent implements OnInit{
       const exactKey = params.has('key');
       if (exactId){
         const id = params.get('id');
-        this.loadByCategoryId(id , this.pageNumber);
+        this.loadByCategoryId(id , pageNo);
       } else if (exactKey && params.get('key') !== ''){
         const key = params.get('key');
-        this.searchProducts(key , this.pageNumber);
+        this.searchProducts(key , pageNo);
       } else {
-        this.loadAllProducts(this.pageNumber);
+        this.loadAllProducts(pageNo);
       }
     });
   }
@@ -57,6 +63,7 @@ export class ProductsComponent implements OnInit{
   searchProducts(key , pageNo): void {
     this.productService.searchByLetters(key , pageNo - 1, this.pageSize).subscribe(response =>
       {
+        // tslint:disable-next-line:no-debugger
         debugger;
         // @ts-ignore
         if (response && 'status' in response && response.status == 500){
@@ -89,6 +96,7 @@ export class ProductsComponent implements OnInit{
   }
   // tslint:disable-next-line:typedef
   addProduct(pro: Product) {
+    // tslint:disable-next-line:no-debugger
     debugger;
     // @ts-ignore
     const ord: CardOrder = new CardOrder(pro);
@@ -98,6 +106,7 @@ export class ProductsComponent implements OnInit{
   doPagination(){
     this.finalProducts(this.pageNumber);
   }
+  // tslint:disable-next-line:typedef
   isUserLogin(){
     return this.auth.isUserLogin();
   }

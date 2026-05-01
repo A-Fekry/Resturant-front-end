@@ -16,7 +16,7 @@ import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './componants/login/login.component';
 import { SignUpComponent } from './componants/sign-up/sign-up.component';
 import {AuthInterceptor} from './service/interceptor/auth.interceptor';
-import {FormsModule} from "@angular/forms";
+import {FormsModule} from '@angular/forms';
 import {ScreenActivator} from './service/activator/screen-activator';
 import {LoginActivator} from './service/activator/login-activator';
 import { DisplayCodeComponent } from './componants/display-code/display-code.component';
@@ -29,14 +29,14 @@ export const routes: Routes = [
   // http://localhost:4200/active
   {path: 'category/:id', component: ProductsComponent, canActivate: [ScreenActivator]},
   {path: 'search/:key', component: ProductsComponent, canActivate: [ScreenActivator]},
-  {path: 'products', component: ProductsComponent,canActivate: [ScreenActivator]},
-  {path: 'cardDetails', component: CardDetailsComponent,canActivate: [ScreenActivator]},
-  {path: 'contact-info', component: ContactInfoComponent,canActivate: [ScreenActivator]},
-  {path: 'chefs', component: ChefsComponent,canActivate: [ScreenActivator]},
-  {path: 'display-code', component: DisplayCodeComponent,canActivate: [ScreenActivator]},
-  {path: 'add-product', component: AddProductComponent,canActivate: [ScreenActivator]},
-  {path: 'login', component: LoginComponent,canActivate:  [LoginActivator]},
-  {path: 'signup', component: SignUpComponent,canActivate:  [LoginActivator]},
+  {path: 'products', component: ProductsComponent, canActivate: [ScreenActivator]},
+  {path: 'cardDetails', component: CardDetailsComponent, canActivate: [ScreenActivator]},
+  {path: 'contact-info', component: ContactInfoComponent, canActivate: [ScreenActivator]},
+  {path: 'chefs', component: ChefsComponent, canActivate: [ScreenActivator]},
+  {path: 'display-code', component: DisplayCodeComponent, canActivate: [ScreenActivator]},
+  {path: 'add-product', component: AddProductComponent, canActivate: [ScreenActivator]},
+  {path: 'login', component: LoginComponent, canActivate:  [LoginActivator]},
+  {path: 'signup', component: SignUpComponent, canActivate:  [LoginActivator]},
   // http://localhost:4200/
   {path: '', redirectTo: '/products', pathMatch: 'full'},
 

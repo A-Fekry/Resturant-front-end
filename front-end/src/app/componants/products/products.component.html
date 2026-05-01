@@ -19,25 +19,27 @@
             <p class="no-products-message" *ngIf="products.length === 0 && isUserLogin()">{{messageEn}}</p>
 
             <div class="col-md-9 pag" style="padding-left: 30%" *ngIf="products.length !== 0">
-                              <ngb-pagination
-                                [(page)]="pageNumber"
-                                [pageSize]="pageSize"
-                                [collectionSize]="collectionSize"
-                                (pageChange)="doPagination()"
-                                [maxSize]="5"
-                                [boundaryLinks]="true"
-                              >
-                              </ngb-pagination>
+
+              <ngb-pagination
+                [(page)]="pageNumber"
+                [pageSize]="pageSize"
+                [collectionSize]="collectionSize"
+                (pageChange)="doPagination()"
+                [maxSize]="5"
+                [boundaryLinks]="true">
+              </ngb-pagination>
 
               <div class="sel">
                 <span class="mr-2">Page Size</span>
-                <select [(ngModel)]="pageSize">
+
+                <select [(ngModel)]="pageSize" (change)="onPageSizeChange()">
                   <option [value]="2">2</option>
                   <option [value]="5">5</option>
                   <option [value]="10">10</option>
                   <option [value]="20">20</option>
                   <option [value]="50">50</option>
                 </select>
+
               </div>
              <!-- <div class="sel">
                 <span class="mr-2">Page Size</span>
