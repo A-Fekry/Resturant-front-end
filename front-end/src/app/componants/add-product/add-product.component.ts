@@ -33,6 +33,7 @@ export class AddProductComponent implements OnInit {
   categories: Category[] = [];
   messageAr = '';
   messageEn = '';
+  // tslint:disable-next-line:max-line-length
   constructor(private router: Router , private authService: AuthService, private productService: ProductService, private categoryService: CategoryService) { }
 
   ngOnInit(): void {
@@ -40,14 +41,14 @@ export class AddProductComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.productService.addProduct(this.product,this.catName).subscribe(
+    this.productService.addProduct(this.product, this.catName).subscribe(
       response => {
         if (response["status"]) {
         this.messageAr = response["messageAr"];
         this.messageEn = response["messageEn"];
         this.extracted();
         } else {
-          this.proRes = response
+          this.proRes = response;
         }
 
       }
