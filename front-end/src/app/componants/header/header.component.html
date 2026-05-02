@@ -21,11 +21,11 @@
         <div class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Actions</a>
           <div class="dropdown-menu m-0">
-
-            <a *ngIf="isAdmin()"  class="dropdown-item" (click)="addProduct()">Add Products</a>
-            <a href="team.html" class="dropdown-item">Request Orders</a>
-            <a href="team.html" class="dropdown-item">All Request Orders</a>
             <a [routerLink]="cat.name === 'ALL'? '/products' : '/category/' + cat.id" *ngFor="let cat of categories" href="booking.html"  class="dropdown-item">{{cat.name}}</a>
+            <a *ngIf="isAdmin()"  class="dropdown-item" (click)="addProduct()">Add Products</a>
+            <a *ngIf="isAdmin()"  class="dropdown-item" (click)="getMessages()">Display Contact Message</a>
+            <a *ngIf="!isAdmin()" class="dropdown-item" (click)="getOrders()">Request Orders</a>
+            <a *ngIf="isAdmin()" class="dropdown-item" (click)="getOrders()">All Request Orders</a>
           </div>
         </div>
 

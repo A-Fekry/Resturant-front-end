@@ -21,7 +21,6 @@ export class CardComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   getTotals(){
-    debugger;
     this.cartService.totalQuantity.subscribe(
       data => {
         this.totalSize = data;

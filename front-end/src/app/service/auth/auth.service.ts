@@ -12,8 +12,6 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(userName, password): Observable<any> {
-    // tslint:disable-next-line:no-debugger
-     debugger;
      return  this.http.post(this.baseUrl + '/login', {userName, password}).pipe(
         map(response => response)
       );
@@ -31,7 +29,6 @@ export class AuthService {
   }
 
   isUserAdmin(): boolean {
-    debugger;
     const roles: string = sessionStorage.getItem('roles');
 
     try {

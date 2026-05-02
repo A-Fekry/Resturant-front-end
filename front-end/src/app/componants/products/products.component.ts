@@ -63,8 +63,6 @@ export class ProductsComponent implements OnInit{
   searchProducts(key , pageNo): void {
     this.productService.searchByLetters(key , pageNo - 1, this.pageSize).subscribe(response =>
       {
-        // tslint:disable-next-line:no-debugger
-        debugger;
         // @ts-ignore
         if (response && 'status' in response && response.status == 500){
           this.products = [];
@@ -96,8 +94,6 @@ export class ProductsComponent implements OnInit{
   }
   // tslint:disable-next-line:typedef
   addProduct(pro: Product) {
-    // tslint:disable-next-line:no-debugger
-    debugger;
     // @ts-ignore
     const ord: CardOrder = new CardOrder(pro);
     this.orderService.addOrderToCard(ord);

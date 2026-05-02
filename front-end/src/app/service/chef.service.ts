@@ -13,7 +13,6 @@ export class ChefService {
   constructor(private http: HttpClient) { }
 
   getChefs(): Observable<Chef[]> {
-    debugger;
     return this.http.get<Chef[]>(this.baseUrl).pipe(
       map(response => response)
     );

@@ -55,6 +55,12 @@ export class HeaderComponent implements OnInit {
   addProduct(){
     this.router.navigate(['/add-product']);
   }
+  getMessages(){
+    this.router.navigate(['/contact-messages']);
+  }
+  getOrders(){
+    this.router.navigate(['/orders']);
+  }
   isAdmin(){
     return this.authService.isUserAdmin();
   }

@@ -21,6 +21,8 @@ import {ScreenActivator} from './service/activator/screen-activator';
 import {LoginActivator} from './service/activator/login-activator';
 import { DisplayCodeComponent } from './componants/display-code/display-code.component';
 import { AddProductComponent } from './componants/add-product/add-product.component';
+import { ContactMessagesComponent } from './componants/contact-messages/contact-messages.component';
+import { OrdersComponent } from './componants/orders/orders.component';
 
 // name : type
 // http://localhost:4200/
@@ -37,6 +39,8 @@ export const routes: Routes = [
   {path: 'add-product', component: AddProductComponent, canActivate: [ScreenActivator]},
   {path: 'login', component: LoginComponent, canActivate:  [LoginActivator]},
   {path: 'signup', component: SignUpComponent, canActivate:  [LoginActivator]},
+  {path: 'contact-messages', component: ContactMessagesComponent, canActivate: [ScreenActivator]},
+  {path: 'orders', component: OrdersComponent, canActivate: [ScreenActivator]},
   // http://localhost:4200/
   {path: '', redirectTo: '/products', pathMatch: 'full'},
 
@@ -63,7 +67,9 @@ export const routes: Routes = [
     LoginComponent,
     SignUpComponent,
     DisplayCodeComponent,
-    AddProductComponent
+    AddProductComponent,
+    ContactMessagesComponent,
+    OrdersComponent
   ],
     imports: [
         RouterModule.forRoot(routes),

@@ -1,0 +1,50 @@
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.title {
+  text-align: center;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.order-card {
+  border: 2px solid black;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-header h4 {
+  color: orange;
+}
+
+.code {
+  background: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.product-list {
+  margin-top: 10px;
+}
+
+.product-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-item:hover {
+  background: #fff3e0;
+}

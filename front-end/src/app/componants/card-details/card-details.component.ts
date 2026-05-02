@@ -38,7 +38,6 @@ export class CardDetailsComponent implements OnInit {
   }
 
   createOrder(){
-    debugger;
     const productIds = this.orderService.orders.map(o => o.id);
     const productQuan = this.orderService.orders.map(o => o.quantity);
     this.orderService.totalQuantity.subscribe(

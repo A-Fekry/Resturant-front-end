@@ -21,7 +21,6 @@ export class ChefsComponent implements OnInit {
   }
 
   getAllChefs(): void{
-    debugger;
     this.chefService.getChefs().subscribe(
       response => {
         this.chefs = response;

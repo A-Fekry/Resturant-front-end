@@ -15,4 +15,9 @@ export class ContactInfoService {
       map(response => response)
     );
   }
+  getAll(): Observable<ContactInfo[]> {
+    return this.http.get<ContactInfo[]>(`${this.baseUrl}get-all`).pipe(
+      map(response => response)
+    );
+  }
 }

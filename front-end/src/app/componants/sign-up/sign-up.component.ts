@@ -23,8 +23,6 @@ export class SignUpComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   createAccount(name, phone, email, password, confirmPassword) {
-    // tslint:disable-next-line:no-debugger
-    debugger;
     if (name === '') {
       this.messageAr = 'يجب ادخال الاسم';
       this.messageEn = 'please enter your name';

@@ -1,0 +1,33 @@
+<div class="container mt-4" *ngIf="isAdmin; else notAllowed">
+
+  <h2 class="title">Contact Messages</h2>
+
+  <table class="table custom-table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Subject</th>
+      <th>Message</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let msg of messages">
+      <td>{{ msg.name }}</td>
+      <td>{{ msg.email }}</td>
+      <td>{{ msg.subject }}</td>
+      <td class="message-cell">{{ msg.message }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<!-- لو مش admin -->
+<ng-template #notAllowed>
+  <div class="not-allowed">
+    <h3>🚫 Access Denied</h3>
+    <p>You are not allowed to view this page.</p>
+  </div>
+</ng-template>

@@ -33,7 +33,6 @@ export class OrderService {
     }
     this.getTotals();
   }
-
   getTotals(): void {
     let totalSize = 0;
     let tatalPrice = 0;
@@ -79,5 +78,11 @@ export class OrderService {
       this.router.navigateByUrl('/display-code');
     });
   }
+  getAllOrders(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/get-all`);
+  }
 
+  getOrdersByUser(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/get-by-id`);
+  }
 }

@@ -1,0 +1,30 @@
+<div class="container mt-4">
+
+  <h2 class="title">Orders</h2>
+
+  <div class="order-card" *ngFor="let order of orders">
+
+    <div class="order-header">
+      <h4>Order #{{ order.id }}</h4>
+      <span class="code">{{ order.code }}</span>
+    </div>
+
+    <p><b>Total Price:</b> {{ order.totalPrice }}</p>
+    <p><b>Quantity:</b> {{ order.quantity }}</p>
+
+    <hr>
+
+    <h5>Products:</h5>
+
+    <div class="product-list">
+      <div class="product-item" *ngFor="let p of order.products">
+
+        <span>{{ p.name }}</span>
+        <span>Price: {{ p.price }}</span>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
