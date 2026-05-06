@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CategoryService} from '../../service/category.service';
-import {Category} from '../../models/Category';
+import {Category} from '../../models/category';
 import {ActivatedRoute} from '@angular/router';
-import {HeaderComponent} from "../header/header.component";
 
 
 @Component({

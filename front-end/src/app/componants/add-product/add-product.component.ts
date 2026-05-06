@@ -15,11 +15,11 @@ export class AddProductComponent implements OnInit {
 }*/
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {AuthService} from "../../service/auth/auth.service";
-import {Product} from "../../models/product";
-import {Category} from "../../models/category";
-import {ProductService} from "../../service/product.service";
-import {CategoryService} from "../../service/category.service";
+import {AuthService} from '../../service/auth/auth.service';
+import {Product} from '../../models/product';
+import {Category} from '../../models/category';
+import {ProductService} from '../../service/product.service';
+import {CategoryService} from '../../service/category.service';
 
 @Component({
   selector: 'app-add-product',
@@ -43,9 +43,9 @@ export class AddProductComponent implements OnInit {
   onSubmit(): void {
     this.productService.addProduct(this.product, this.catName).subscribe(
       response => {
-        if (response["status"]) {
-        this.messageAr = response["messageAr"];
-        this.messageEn = response["messageEn"];
+        if (response.status) {
+        this.messageAr = response.messageAr;
+        this.messageEn = response.messageEn;
         this.extracted();
         } else {
           this.proRes = response;

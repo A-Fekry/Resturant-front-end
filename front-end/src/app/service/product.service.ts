@@ -32,7 +32,7 @@ export class ProductService {
       map(response => response)
     );
   }
-  addProduct(productDto: Product,catName: String) : Observable<Product> {
+  addProduct(productDto: Product,catName: String) : Observable<any> {
     return this.http.post<Product>(this.baseUrl + '/save',{productDto , catName}).pipe(
       map(response => response)
     )

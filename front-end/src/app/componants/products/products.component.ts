@@ -4,7 +4,7 @@ import {Product} from '../../models/product';
 import {ActivatedRoute} from '@angular/router';
 import {OrderService} from '../../service/order.service';
 import {CardOrder} from '../../models/card-order';
-import {AuthService} from "../../service/auth/auth.service";
+import {AuthService} from '../../service/auth/auth.service';
 
 
 @Component({
